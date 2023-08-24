@@ -1,0 +1,36 @@
+import random
+
+def play_game():
+    # Randomly select a number between 1 and 100
+    number = random.randint(1, 100)
+
+    print("Welcome to the 'Guess the Number' game!")
+    print("I have chosen a number between 1 and 100. Try to guess it!")
+
+    chances = 5  # Number of chances
+
+    while chances > 0:
+        guess = int(input("Enter your guess: "))
+
+        if guess == number:
+            print("Congratulations! You guessed the number!")
+            break
+        elif guess < number:
+            print("The secret number is higher.")
+        else:
+            print("The secret number is lower.")
+
+        chances -= 1
+
+        if chances > 0:
+            print("You have", chances, "chances left.")
+        else:
+            print("Oops! You ran out of chances. The secret number was", number)
+
+    play_again = input("Do you want to play again? (yes/no): ")
+    if play_again.lower() == "yes":
+        play_game()
+    else:
+        print("Thank you for playing!")
+
+play_game()
