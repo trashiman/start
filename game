@@ -1,7 +1,7 @@
 import random
 
 def play_game():
-    # Randomly select a number between 1 and 100
+    # Randomly select a number between 1 and 100.
     number = random.randint(1, 100)
 
     print("Welcome to the 'Guess the Number' game!")
